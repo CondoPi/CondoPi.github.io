@@ -58,9 +58,9 @@ function updateGaugeVal() {
     // This is used for testing purposes.
     gauge.value = (Math.random() * (maxVal - minVal)) + minVal;
 
-    // fetch(dataplicityWormHoleAddress)
-    //     .then(res => res.json())
-    //     .then((out) => {
-    //         console.log('Output: ', out);
-    // }).catch(err => console.error(err));
+    fetch(dataplicityWormHoleAddress)
+        .then(res => res.json())
+        .then((out) => {
+            console.log('Output: ', out);
+    }).catch(err => console.error(err));
 }
