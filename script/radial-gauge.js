@@ -62,7 +62,7 @@ async function updateGaugeVal() {
     //         console.log('Output: ', out);
     // }).catch(err => console.error(err));
 
-    const response = await fetch(dataplicityWormHoleAddress);
+    const response = await fetch(dataplicityWormHoleAddress, { mode: 'no-cors' });
     const myJson = await response.json();
     console.log(JSON.stringify(myJson));
 }
