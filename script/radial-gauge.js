@@ -53,7 +53,7 @@ gauge.draw();
 document.getElementById(radialGaugeCanvasId).addEventListener("click", updateGaugeVal)
 
 // Dynamically updates the gauge value.
-function updateGaugeVal() {
+async function updateGaugeVal() {
     // Randomly sets the value of the gauge. 
     // This is used for testing purposes.
     gauge.value = (Math.random() * (maxVal - minVal)) + minVal;
