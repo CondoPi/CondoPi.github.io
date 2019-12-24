@@ -58,11 +58,34 @@ async function updateGaugeVal() {
     // This is used for testing purposes.
     gauge.value = (Math.random() * (maxVal - minVal)) + minVal;
 
-    // fetch(dataplicityWormHoleAddress, { mode: 'no-cors' }).then(res => res.json()).then((out) => {
-    //         console.log('Output: ', out);
-    // }).catch(err => console.error(err));
+    // fetch(dataplicityWormHoleAddress, { mode: 'no-cors' }).then(res => res.json()).then((out) => { console.log('Output: ', out) }).catch(err => console.error(err))
 
-    const response = await fetch(dataplicityWormHoleAddress, { mode: 'no-cors' });
-    const myJson = await response.json();
-    console.log(JSON.stringify(myJson));
+    // const response = await fetch(dataplicityWormHoleAddress, { mode: 'no-cors' });
+    // const myJson = await response.json();
+    // console.log(JSON.stringify(myJson));
+
+    getJSON(dataplicityWormHoleAddress,
+        function(err, data) {
+            if (err !== null) {
+                alert('Something went wrong: ' + err);
+            } else {
+                alert('Your query count: ' + data.query.count);
+            }
+        } 
+    );
 }
+
+var getJSON = function(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+        var status = xhr.status;
+        if (status === 200) {
+        callback(null, xhr.response);
+        } else {
+        callback(status, xhr.response);
+        }
+    };
+    xhr.send();
+};
