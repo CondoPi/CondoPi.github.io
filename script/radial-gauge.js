@@ -70,6 +70,7 @@ async function updateGaugeVal() {
       alert("Something went wrong: " + err);
     } else {
       alert("Your query count: " + data);
+      console.log(data);
     }
     console.log(data);
   });
