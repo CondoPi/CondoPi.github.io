@@ -45,7 +45,7 @@ var gauge = new RadialGauge({
   animationDuration: 500,
 });
 
-gauge.value = this.updateGaugeVal();
+gauge.value = updateGaugeVal;
 
 // Draw the gauge
 gauge.draw();
