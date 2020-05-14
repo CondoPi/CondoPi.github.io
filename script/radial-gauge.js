@@ -71,6 +71,7 @@ async function updateGaugeVal() {
     } else {
       alert("Your query count: " + data);
     }
+    console.log(data);
   });
 }
 
