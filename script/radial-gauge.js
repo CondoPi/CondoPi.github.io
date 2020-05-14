@@ -45,19 +45,10 @@ var gauge = new RadialGauge({
   animationDuration: 500,
 });
 
+gauge.value = this.updateGaugeVal();
+
 // Draw the gauge
 gauge.draw();
-
-// Set the gauge temperature before it is rendered in browser.
-getJSON(dataplicityWormHoleAddress, function (err, data) {
-  if (err !== null) {
-    alert("Something went wrong: " + err);
-  } else {
-    //   alert("Your query count: " + data);
-    gauge.value = data.fahrenheit;
-    console.log(data);
-  }
-});
 
 // Add an event listener to the canvas object.
 document
