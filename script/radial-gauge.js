@@ -48,6 +48,17 @@ var gauge = new RadialGauge({
 // Draw the gauge
 gauge.draw();
 
+// Set the gauge temperature before it is rendered in browser.
+getJSON(dataplicityWormHoleAddress, function (err, data) {
+  if (err !== null) {
+    alert("Something went wrong: " + err);
+  } else {
+    //   alert("Your query count: " + data);
+    gauge.value = data.fahrenheit;
+    console.log(data);
+  }
+});
+
 // Add an event listener to the canvas object.
 document
   .getElementById(radialGaugeCanvasId)
@@ -73,7 +84,6 @@ async function updateGaugeVal() {
       gauge.value = data.fahrenheit;
       console.log(data);
     }
-    // console.log(data);
   });
 }
 
