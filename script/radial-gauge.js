@@ -70,9 +70,10 @@ async function updateGaugeVal() {
       alert("Something went wrong: " + err);
     } else {
       alert("Your query count: " + data);
+      gauge.value = data.fahrenheit;
       console.log(data);
     }
-    console.log(data);
+    // console.log(data);
   });
 }
 
