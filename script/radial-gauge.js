@@ -57,7 +57,7 @@ document
 async function updateGaugeVal() {
   // Randomly sets the value of the gauge.
   // This is used for testing purposes.
-  gauge.value = Math.random() * (maxVal - minVal) + minVal;
+  //   gauge.value = Math.random() * (maxVal - minVal) + minVal;
 
   // fetch(dataplicityWormHoleAddress, { mode: 'no-cors' }).then(res => res.json()).then((out) => { console.log('Output: ', out) }).catch(err => console.error(err))
 
