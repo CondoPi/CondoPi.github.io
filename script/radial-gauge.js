@@ -15,6 +15,7 @@ const maxVal = 80;
 const dataplicityWormHoleAddress =
   "https://intriguing-zebu-9373.dataplicity.io/";
 var radialGaugeCanvasId = "radial-gauge-canvas";
+var initial_value;
 
 // Gauge Constructor
 var gauge = new RadialGauge({
@@ -46,7 +47,10 @@ var gauge = new RadialGauge({
   animationDuration: 500,
 });
 
-gauge.value = updateGaugeVal();
+if (initial_value) {
+  // gauge.value = updateGaugeVal();
+  gauge.value = initial_value;
+}
 
 // Draw the gauge
 gauge.draw();
@@ -74,6 +78,7 @@ async function updateGaugeVal() {
     } else {
       //   alert("Your query count: " + data);   // Used for trouble shooting.
       gauge.value = data.fahrenheit;
+      initial_value = data.fahrenheit;
       console.log(data);
     }
   });
