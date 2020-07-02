@@ -48,7 +48,7 @@ var gauge = new RadialGauge({
 });
 
 if (initial_value) {
-  // gauge.value = updateGaugeVal();
+  // gauge.value = updateGaugeVal;
   gauge.value = initial_value;
 }
 
