@@ -23,6 +23,7 @@ var gauge = new RadialGauge({
   height: 300,
   units: "ºF",
   title: "Condo Temperature",
+  value: 60,
   minValue: minVal,
   maxValue: maxVal,
   majorTicks: ["40", "45", "50", "55", "60", "65", "70", "75", "80"],
@@ -71,7 +72,7 @@ async function updateGaugeVal() {
     if (err !== null) {
       alert("Something went wrong: " + err);
     } else {
-      //   alert("Your query count: " + data);
+      //   alert("Your query count: " + data);   // Used for trouble shooting.
       gauge.value = data.fahrenheit;
       console.log(data);
     }
